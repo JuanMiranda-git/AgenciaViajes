@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalle del paquete turístico seleccionado.">
+    <title>Detalle de paquete | Tours Out Here</title>
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-site sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-airplane-fill me-2"></i> Tours Out Here</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal" aria-controls="navPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Paquetes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                </ul>
+                <a href="buscar.html" class="btn boton-accent btn-sm">Buscar vuelos</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="detallePaquete">
+        <section class="detalle-hero py-4">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-2">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="catalogo.html" class="text-white-50">Paquetes</a></li>
+                        <li class="breadcrumb-item active text-white" aria-current="page">Detalle del paquete</li>
+                    </ol>
+                </nav>
+                <span class="kicker">Crónica de viaje · Nº 03</span>
+                <h1 id="paqTitulo" class="h2 fw-bold mb-1 mt-1">Romance en París</h1>
+                <p id="paqCiudad" class="mb-0 text-white-50"><i class="bi bi-geo-alt me-1"></i>París, Francia</p>
+            </div>
+        </section>
+
+        <main class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <figure class="passepartout mb-4">
+                        <img id="paqImagen" src="img/parisFrancia.jpg" alt="Imagen principal del paquete" class="img-fluid" style="max-height: 380px;">
+                        <span class="rotulo-gira" style="bottom: 1rem; right: 1rem;">Día tras día</span>
+                    </figure>
+
+                    <div class="panel-info mb-4">
+                        <span class="kicker mb-1 d-block">La historia</span>
+                        <h2 class="h4 fw-bold">Descripción</h2>
+                        <p id="paqDescripcion" class="mb-0">El plan perfecto para celebrar en pareja: recorre la Torre Eiffel, el Louvre y los cafés de Montmartre.</p>
+                    </div>
+
+                    <div class="d-flex align-items-baseline justify-content-between mb-3">
+                        <h2 class="h4 fw-bold mb-0">Diario del paquete</h2>
+                        <span id="paqDuracion" class="texto-muted small"><i class="bi bi-calendar-event me-1"></i>Duración: 5 días</span>
+                    </div>
+                    <div class="diario" id="diarioPaquete"></div>
+                </div>
+
+                <aside class="col-lg-4">
+                    <div class="ticket sticky-top" style="top: 90px;">
+                        <span class="kicker">Incluye</span>
+                        <p id="paqIncluye" class="d-none"></p>
+                        <ul id="paqIncluyeLista" class="lista-incluye list-unstyled mt-2 mb-3">
+                            <li class="d-flex align-items-start gap-2 mb-1"><i class="bi bi-check-circle-fill mt-1 icono-incluye"></i><span>Vuelo ida y vuelta</span></li>
+                            <li class="d-flex align-items-start gap-2 mb-1"><i class="bi bi-check-circle-fill mt-1 icono-incluye"></i><span>Hotel 4*</span></li>
+                            <li class="d-flex align-items-start gap-2 mb-1"><i class="bi bi-check-circle-fill mt-1 icono-incluye"></i><span>Desayuno</span></li>
+                            <li class="d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill mt-1 icono-incluye"></i><span>City tour</span></li>
+                        </ul>
+                        <div class="ticket-linea"></div>
+                        <p class="duracion-vuelo mb-1">Precio por persona</p>
+                        <p class="precio-valor" id="paqPrecio">$2.850.000</p>
+                        <a id="btnReservaPaquete" href="reserva.html" class="btn boton-accent btn-lg w-100">Reservar este paquete</a>
+                        <small class="texto-muted d-block mt-2">Sin pagos por adelantado: la reserva quedará en estado pendiente.</small>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer-site pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5><i class="bi bi-airplane-fill me-1"></i> Tours Out Here</h5>
+                    <p>Viajes increíbles a precios increíbles. Destinos, paquetes y experiencias para familias, parejas y aventureros.</p>
+                    <div class="d-flex gap-2 mt-3 redes">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="X, antes Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="buscar.html">Vuelos</a></li>
+                        <li><a href="catalogo.html">Paquetes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i>Av. Siempre Viva 123, Bogotá</li>
+                        <li><i class="bi bi-telephone me-2"></i>(+57) 601 234 5678</li>
+                        <li><i class="bi bi-envelope me-2"></i>contacto@toursouthere.co</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Horario</h5>
+                    <ul class="list-unstyled">
+                        <li>Lun a Vie: 8:00 - 18:00</li>
+                        <li>Sábados: 9:00 - 13:00</li>
+                        <li>Domingos: cerrado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3 mt-4">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                <p class="mb-0">&copy; 2026 Tours Out Here. Todos los derechos reservados.</p>
+                <p class="mb-0">Maqueta estática · datos de ejemplo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

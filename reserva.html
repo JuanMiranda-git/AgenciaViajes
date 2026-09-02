@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reserva de vuelo o paquete turístico.">
+    <title>Reserva | Tours Out Here</title>
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-site sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-airplane-fill me-2"></i> Tours Out Here</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal" aria-controls="navPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Paquetes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                </ul>
+                <a href="buscar.html" class="btn boton-accent btn-sm">Buscar vuelos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-3">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Reserva</li>
+            </ol>
+        </nav>
+
+        <div class="section-heading">
+            <span class="kicker">Formaliza tu lugar · Nº 04</span>
+            <h1 class="mt-2">Tu reserva</h1>
+            <div class="text-underline"></div>
+        </div>
+
+        <div id="sinItem" class="aviso-sin-item d-none">
+            <span class="aviso-icono"><i class="bi bi-journal-x"></i></span>
+            <h2 class="h5 fw-bold mb-1">No hay un ítem para reservar</h2>
+            <p class="texto-muted mb-0">Selecciona primero un vuelo desde los resultados o un paquete desde el catálogo.</p>
+        </div>
+
+        <div class="row g-4 mt-1">
+            <div class="col-lg-7 order-2 order-lg-1">
+                <div class="panel-info">
+                    <span class="kicker mb-1 d-block">Datos de contacto</span>
+                    <h2 class="h4 fw-bold">Completa el formulario</h2>
+
+                    <form id="formReserva" class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-6">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombre" required autocomplete="name">
+                            <div class="invalid-feedback">Ingresa tu nombre completo.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correo" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" required autocomplete="email">
+                            <div class="invalid-feedback">Ingresa un correo válido.</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="adultos" class="form-label">Adultos</label>
+                            <select class="form-select" id="adultos" required>
+                                <option value="1" selected>1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="infantes" class="form-label">Infantes</label>
+                            <select class="form-select" id="infantes">
+                                <option value="0" selected>0</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="fechaReserva" class="form-label">Fecha de viaje</label>
+                            <input type="date" class="form-control" id="fechaReserva" required>
+                            <div class="invalid-feedback">Selecciona la fecha de tu viaje.</div>
+                        </div>
+                        <div class="col-12 d-flex flex-wrap gap-2 mt-4">
+                            <button type="submit" class="btn boton-accent btn-lg">Confirmar reserva</button>
+                            <button type="button" id="btnVolverResumen" class="btn btn-outline-secondary btn-lg d-none">Volver y elegir otro</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-5 order-1 order-lg-2">
+                <aside class="ticket mb-4">
+                    <span class="kicker">Resumen</span>
+                    <h2 class="resumen-titulo" id="resumenTitulo">—</h2>
+                    <div class="ticket-linea"></div>
+                    <div class="d-flex justify-content-between">
+                        <span class="texto-muted">Tipo</span>
+                        <span class="fw-bold" id="resumenTipo">—</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span class="texto-muted">Precio por persona</span>
+                        <span class="fw-bold" id="resumenPrecio">—</span>
+                    </div>
+                    <div class="ticket-linea"></div>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <span class="texto-muted">Total</span>
+                        <span class="precio-valor" id="resumenTotal">—</span>
+                    </div>
+                    <small class="texto-muted d-block mt-3">La reserva quedará en estado <strong>pendiente</strong> hasta que confirmes el pago.</small>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-site pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5><i class="bi bi-airplane-fill me-1"></i> Tours Out Here</h5>
+                    <p>Viajes increíbles a precios increíbles. Destinos, paquetes y experiencias para familias, parejas y aventureros.</p>
+                    <div class="d-flex gap-2 mt-3 redes">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="X, antes Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="buscar.html">Vuelos</a></li>
+                        <li><a href="catalogo.html">Paquetes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i>Av. Siempre Viva 123, Bogotá</li>
+                        <li><i class="bi bi-telephone me-2"></i>(+57) 601 234 5678</li>
+                        <li><i class="bi bi-envelope me-2"></i>contacto@toursouthere.co</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Horario</h5>
+                    <ul class="list-unstyled">
+                        <li>Lun a Vie: 8:00 - 18:00</li>
+                        <li>Sábados: 9:00 - 13:00</li>
+                        <li>Domingos: cerrado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3 mt-4">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                <p class="mb-0">&copy; 2026 Tours Out Here. Todos los derechos reservados.</p>
+                <p class="mb-0">Maqueta estática · datos de ejemplo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

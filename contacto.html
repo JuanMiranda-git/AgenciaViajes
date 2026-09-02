@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta con la Tours Out Here.">
+    <title>Contacto | Tours Out Here</title>
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-site sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-airplane-fill me-2"></i> Tours Out Here</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal" aria-controls="navPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Paquetes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                </ul>
+                <a href="buscar.html" class="btn boton-accent btn-sm">Buscar vuelos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-3">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contacto</li>
+            </ol>
+        </nav>
+
+        <div class="row g-4">
+            <div class="col-lg-5">
+                <span class="kicker">Escribenos · Nº 06</span>
+                <h1 class="mt-2 mb-3">Cuéntanos tu próxima aventura</h1>
+                <div class="text-underline"></div>
+                <ul class="list-unstyled mt-4 contacto-lista">
+                    <li class="d-flex gap-3 mb-3"><i class="bi bi-geo-alt fs-5"></i><span><strong>Oficina</strong><br>Av. Siempre Viva 123, Bogotá, Colombia</span></li>
+                    <li class="d-flex gap-3 mb-3"><i class="bi bi-telephone fs-5"></i><span><strong>Teléfono</strong><br>(+57) 601 234 5678</span></li>
+                    <li class="d-flex gap-3 mb-3"><i class="bi bi-envelope fs-5"></i><span><strong>Correo</strong><br>contacto@toursouthere.co</span></li>
+                    <li class="d-flex gap-3"><i class="bi bi-clock fs-5"></i><span><strong>Horario</strong><br>Lun a Vie 8:00 - 18:00 · Sáb 9:00 - 13:00</span></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="panel-info">
+                    <span class="kicker mb-1 d-block">Formulario</span>
+                    <h2 class="h4 fw-bold">Envíanos un mensaje</h2>
+
+                    <form id="formContacto" class="row g-3 mt-1">
+                        <div class="col-md-6">
+                            <label for="contactoNombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="contactoNombre" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="contactoCorreo" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="contactoCorreo" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="contactoAsunto" class="form-label">Asunto</label>
+                            <input type="text" class="form-control" id="contactoAsunto" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="contactoMensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="contactoMensaje" rows="5" required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn boton-accent btn-lg">Enviar mensaje</button>
+                        </div>
+                    </form>
+
+                    <div id="mensajeEnvio" class="d-none aviso-exito mt-2">
+                        <i class="bi bi-envelope-check me-2"></i>
+                        ¡Gracias por escribirnos! Hemos recibido tu mensaje y te responderemos pronto.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-site pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5><i class="bi bi-airplane-fill me-1"></i> Tours Out Here</h5>
+                    <p>Viajes increíbles a precios increíbles. Destinos, paquetes y experiencias para familias, parejas y aventureros.</p>
+                    <div class="d-flex gap-2 mt-3 redes">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="X, antes Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="buscar.html">Vuelos</a></li>
+                        <li><a href="catalogo.html">Paquetes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i>Av. Siempre Viva 123, Bogotá</li>
+                        <li><i class="bi bi-telephone me-2"></i>(+57) 601 234 5678</li>
+                        <li><i class="bi bi-envelope me-2"></i>contacto@toursouthere.co</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Horario</h5>
+                    <ul class="list-unstyled">
+                        <li>Lun a Vie: 8:00 - 18:00</li>
+                        <li>Sábados: 9:00 - 13:00</li>
+                        <li>Domingos: cerrado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3 mt-4">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                <p class="mb-0">&copy; 2026 Tours Out Here. Todos los derechos reservados.</p>
+                <p class="mb-0">Maqueta estática · datos de ejemplo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

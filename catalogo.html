@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de paquetes turísticos de la Tours Out Here.">
+    <title>Catálogo de paquetes | Tours Out Here</title>
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-site sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-airplane-fill me-2"></i> Tours Out Here</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal" aria-controls="navPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Paquetes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                </ul>
+                <a href="buscar.html" class="btn boton-accent btn-sm">Buscar vuelos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-3">
+                <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Paquetes</li>
+            </ol>
+        </nav>
+
+        <div class="section-heading">
+            <span class="kicker">Índice de planes · Nº 02</span>
+            <h1 class="mt-2">Catálogo de paquetes</h1>
+            <div class="text-underline"></div>
+        </div>
+
+        <div class="row g-4">
+            <aside class="col-lg-3">
+                <div class="panel-filtros">
+                    <p class="titulo-filtro mb-3">Filtros</p>
+                    <div class="mb-3">
+                        <label for="filtroPais" class="form-label">País</label>
+                        <select id="filtroPais" class="form-select">
+                            <option value="">Todos</option>
+                            <option value="Francia">Francia</option>
+                            <option value="Italia">Italia</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Japón">Japón</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="filtroPrecio" class="form-label">Precio</label>
+                        <select id="filtroPrecio" class="form-select">
+                            <option value="">Todos</option>
+                            <option value="bajo">Hasta $1.000.000</option>
+                            <option value="medio">$1.000.000 - $2.500.000</option>
+                            <option value="alto">Más de $2.500.000</option>
+                        </select>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="col-lg-9">
+                <div class="row g-4">
+                    <div class="col-md-6 reveal" data-package-card data-pais="Francia" data-precio="2850000">
+                        <article class="card card-paquete h-100" data-paquete='{"titulo":"Romance en París","ciudad":"París, Francia","duracion":"5 días","precio":2850000,"incluye":"Vuelo ida y vuelta, hotel 4*, desayuno y city tour","img":"img/parisFrancia.jpg","descripcion":"El plan perfecto para celebrar en pareja: recorre la Torre Eiffel, el Louvre y los cafés de Montmartre."}'>
+                            <span class="num-placa">P-01</span>
+                            <img src="img/parisFrancia.jpg" class="card-img-top" alt="Imagen promocional del paquete Romance en París">
+                            <div class="card-body d-flex flex-column">
+                                <span class="kicker mb-1">Francia · 5 días</span>
+                                <h2 class="h5 fw-bold mb-1">Romance en París</h2>
+                                <p class="precio-valor mt-auto mb-3">$2.850.000</p>
+                                <a href="#" data-accion="detalle" class="btn btn-primary w-100">Ver detalle</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 desplaza reveal" data-package-card data-pais="Italia" data-precio="2450000">
+                        <article class="card card-paquete h-100" data-paquete='{"titulo":"Roma Clásica","ciudad":"Roma, Italia","duracion":"4 días","precio":2450000,"incluye":"Vuelo ida y vuelta, hotel 3*, desayuno y visitas guiadas","img":"img/romaItalia.jpg","descripcion":"Coliseo, Fontana di Trevi y el Vaticano con guías expertos en español."}'>
+                            <span class="num-placa">P-02</span>
+                            <img src="img/romaItalia.jpg" class="card-img-top" alt="Imagen promocional del paquete Roma Clásica">
+                            <div class="card-body d-flex flex-column">
+                                <span class="kicker mb-1">Italia · 4 días</span>
+                                <h2 class="h5 fw-bold mb-1">Roma Clásica</h2>
+                                <p class="precio-valor mt-auto mb-3">$2.450.000</p>
+                                <a href="#" data-accion="detalle" class="btn btn-primary w-100">Ver detalle</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 reveal" data-package-card data-pais="Colombia" data-precio="980000">
+                        <article class="card card-paquete h-100" data-paquete='{"titulo":"Escapada en Cartagena","ciudad":"Cartagena, Colombia","duracion":"3 días","precio":980000,"incluye":"Vuelo ida y vuelta, hotel en el Centro Histórico y paseo en chiva","img":"img/cartagenaColombia.jpg","descripcion":"Murallas, mar y color. La escapada corta perfecta para desconectar."}'>
+                            <span class="num-placa">P-03</span>
+                            <img src="img/cartagenaColombia.jpg" class="card-img-top" alt="Imagen promocional del paquete Escapada en Cartagena">
+                            <div class="card-body d-flex flex-column">
+                                <span class="kicker mb-1">Colombia · 3 días</span>
+                                <h2 class="h5 fw-bold mb-1">Escapada en Cartagena</h2>
+                                <p class="precio-valor mt-auto mb-3">$980.000</p>
+                                <a href="#" data-accion="detalle" class="btn btn-primary w-100">Ver detalle</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 desplaza reveal" data-package-card data-pais="Japón" data-precio="6900000">
+                        <article class="card card-paquete h-100" data-paquete='{"titulo":"Japón Mágico","ciudad":"Kyoto, Japón","duracion":"8 días","precio":6900000,"incluye":"Vuelo ida y vuelta, hoteles, tren bala y tours","img":"img/kyotoJapon.jpg","descripcion":"Templos, tecnología y tradición: un viaje inolvidable por Japón."}'>
+                            <span class="num-placa">P-04</span>
+                            <img src="img/kyotoJapon.jpg" class="card-img-top" alt="Imagen promocional del paquete Japón Mágico">
+                            <div class="card-body d-flex flex-column">
+                                <span class="kicker mb-1">Japón · 8 días</span>
+                                <h2 class="h5 fw-bold mb-1">Japón Mágico</h2>
+                                <p class="precio-valor mt-auto mb-3">$6.900.000</p>
+                                <a href="#" data-accion="detalle" class="btn btn-primary w-100">Ver detalle</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 reveal" data-package-card data-pais="Francia" data-precio="3400000">
+                        <article class="card card-paquete h-100" data-paquete='{"titulo":"París y Versalles","ciudad":"París, Francia","duracion":"6 días","precio":3400000,"incluye":"Vuelo ida y vuelta, hotel 4*, desayuno y entrada a Versalles","img":"img/parisFrancia.jpg","descripcion":"París más la majestuosa visita al Palacio de Versalles con guía."}'>
+                            <span class="num-placa">P-05</span>
+                            <img src="img/parisFrancia.jpg" class="card-img-top" alt="Imagen promocional del paquete París y Versalles">
+                            <div class="card-body d-flex flex-column">
+                                <span class="kicker mb-1">Francia · 6 días</span>
+                                <h2 class="h5 fw-bold mb-1">París y Versalles</h2>
+                                <p class="precio-valor mt-auto mb-3">$3.400.000</p>
+                                <a href="#" data-accion="detalle" class="btn btn-primary w-100">Ver detalle</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 desplaza reveal" data-package-card data-pais="Italia" data-precio="3100000">
+                        <article class="card card-paquete h-100" data-paquete='{"titulo":"Toscana en familia","ciudad":"Roma, Italia","duracion":"7 días","precio":3100000,"incluye":"Vuelo ida y vuelta, hotel familiar, desayuno y tours","img":"img/romaItalia.jpg","descripcion":"Una ruta pensada para disfrutar en familia por los paisajes de la Toscana."}'>
+                            <span class="num-placa">P-06</span>
+                            <img src="img/romaItalia.jpg" class="card-img-top" alt="Imagen promocional del paquete Toscana en familia">
+                            <div class="card-body d-flex flex-column">
+                                <span class="kicker mb-1">Italia · 7 días</span>
+                                <h2 class="h5 fw-bold mb-1">Toscana en familia</h2>
+                                <p class="precio-valor mt-auto mb-3">$3.100.000</p>
+                                <a href="#" data-accion="detalle" class="btn btn-primary w-100">Ver detalle</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 reveal" data-package-card data-pais="Colombia" data-precio="1150000">
+                        <article class="card card-paquete h-100" data-paquete='{"titulo":"Cartagena Todo Incluido","ciudad":"Cartagena, Colombia","duracion":"4 días","precio":1150000,"incluye":"Vuelo ida y vuelta, hotel todo incluido y traslados","img":"img/cartagenaColombia.jpg","descripcion":"Todo incluido en las playas más bellas del Caribe colombiano."}'>
+                            <span class="num-placa">P-07</span>
+                            <img src="img/cartagenaColombia.jpg" class="card-img-top" alt="Imagen promocional del paquete Cartagena Todo Incluido">
+                            <div class="card-body d-flex flex-column">
+                                <span class="kicker mb-1">Colombia · 4 días</span>
+                                <h2 class="h5 fw-bold mb-1">Cartagena Todo Incluido</h2>
+                                <p class="precio-valor mt-auto mb-3">$1.150.000</p>
+                                <a href="#" data-accion="detalle" class="btn btn-primary w-100">Ver detalle</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 desplaza reveal" data-package-card data-pais="Japón" data-precio="7400000">
+                        <article class="card card-paquete h-100" data-paquete='{"titulo":"Tokio Deluxe","ciudad":"Kioto, Japón","duracion":"9 días","precio":7400000,"incluye":"Vuelo ida y vuelta, hoteles 4*, guías y transporte","img":"img/kyotoJapon.jpg","descripcion":"Tokio y Kioto con lo mejor de la gastronomía y cultura japonesa."}'>
+                            <span class="num-placa">P-08</span>
+                            <img src="img/kyotoJapon.jpg" class="card-img-top" alt="Imagen promocional del paquete Tokio Deluxe">
+                            <div class="card-body d-flex flex-column">
+                                <span class="kicker mb-1">Japón · 9 días</span>
+                                <h2 class="h5 fw-bold mb-1">Tokio Deluxe</h2>
+                                <p class="precio-valor mt-auto mb-3">$7.400.000</p>
+                                <a href="#" data-accion="detalle" class="btn btn-primary w-100">Ver detalle</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div id="sinResultadosPaquetes" class="d-none text-center py-5">
+                    <i class="bi bi-inboxes fs-1 text-primary"></i>
+                    <p class="h4 mt-2">Sin paquetes</p>
+                    <p class="texto-muted">Prueba con otros filtros.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-site pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5><i class="bi bi-airplane-fill me-1"></i> Tours Out Here</h5>
+                    <p>Viajes increíbles a precios increíbles. Destinos, paquetes y experiencias para familias, parejas y aventureros.</p>
+                    <div class="d-flex gap-2 mt-3 redes">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="X, antes Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="buscar.html">Vuelos</a></li>
+                        <li><a href="catalogo.html">Paquetes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i>Av. Siempre Viva 123, Bogotá</li>
+                        <li><i class="bi bi-telephone me-2"></i>(+57) 601 234 5678</li>
+                        <li><i class="bi bi-envelope me-2"></i>contacto@toursouthere.co</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Horario</h5>
+                    <ul class="list-unstyled">
+                        <li>Lun a Vie: 8:00 - 18:00</li>
+                        <li>Sábados: 9:00 - 13:00</li>
+                        <li>Domingos: cerrado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3 mt-4">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                <p class="mb-0">&copy; 2026 Tours Out Here. Todos los derechos reservados.</p>
+                <p class="mb-0">Maqueta estática · datos de ejemplo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

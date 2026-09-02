@@ -1,0 +1,734 @@
+/* ============================================================
+   AGENCIA DE VIAJES — Tema "Costa Retro / Editorial"
+   Paleta: Crema Vintage #F3E9D2 · Verde Menta #114B5F
+           Naranja Melocotón #F4A261 · Rojo Ladrillo #B7094C
+   ============================================================ */
+
+/* ---------- Tipografías locales (variable) ---------- */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../vendor/fonts/playfair-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../vendor/fonts/playfair-italic-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../vendor/fonts/ebgaramond-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../vendor/fonts/ebgaramond-italic-var.woff2') format('woff2');
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  --crema: #F3E9D2;
+  --papel: #FFF9E8;
+  --tinta: #114B5F;
+  --tinta-clara: #1D6A85;
+  --melocoton: #F4A261;
+  --melocoton-oscuro: #E76F51;
+  --ladrillo: #B7094C;
+  --ff-titulo: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --ff-cuerpo: 'EB Garamond', Georgia, 'Times New Roman', serif;
+
+  --bs-primary: var(--melocoton);
+  --bs-primary-rgb: 244, 162, 97;
+  --bs-body-bg: var(--crema);
+  --bs-body-color: var(--tinta);
+  --bs-body-font-family: var(--ff-cuerpo);
+  --bs-link-color: var(--tinta);
+  --bs-link-hover-color: var(--ladrillo);
+  --bs-card-border-width: 0;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--crema);
+  color: var(--tinta);
+  font-family: var(--ff-cuerpo);
+  line-height: 1.65;
+  background-image:
+    radial-gradient(rgba(244, 162, 97, 0.10) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  color: var(--tinta);
+}
+a {
+  color: var(--tinta);
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--ladrillo); }
+::selection { background: var(--melocoton); color: #0B2A33; }
+
+.kicker {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ladrillo);
+}
+.kicker::before { content: "✦ "; letter-spacing: 0; }
+.texto-muted { color: var(--tinta-clara); opacity: 0.9; }
+.text-primary { color: var(--ladrillo) !important; }
+.icono-incluye { color: var(--melocoton-oscuro); }
+
+.breadcrumb { font-size: 0.85rem; }
+.breadcrumb a { color: var(--tinta-clara); }
+.breadcrumb-item.active { color: var(--ladrillo); }
+.breadcrumb-item + .breadcrumb-item::before { color: var(--melocoton-oscuro); }
+
+/* ---------- Botones ---------- */
+.btn-primary {
+  --bs-btn-bg: var(--melocoton);
+  --bs-btn-border-color: var(--melocoton);
+  --bs-btn-color: #0B2A33;
+  --bs-btn-hover-bg: var(--melocoton-oscuro);
+  --bs-btn-hover-border-color: var(--melocoton-oscuro);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--melocoton-oscuro);
+  --bs-btn-focus-shadow-rgb: 244, 162, 97;
+  font-family: var(--ff-titulo);
+  font-weight: 700;
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--tinta);
+  --bs-btn-border-color: var(--tinta);
+  --bs-btn-hover-bg: var(--tinta);
+  --bs-btn-hover-color: var(--crema);
+  --bs-btn-hover-border-color: var(--tinta);
+  --bs-btn-active-bg: var(--tinta);
+  --bs-btn-focus-shadow-rgb: 17, 75, 95;
+  font-family: var(--ff-titulo);
+  font-weight: 700;
+}
+.boton-accent {
+  background-color: var(--melocoton);
+  border: 2px solid var(--tinta);
+  color: #0B2A33;
+  font-family: var(--ff-titulo);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--tinta);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+}
+.boton-accent:hover,
+.boton-accent:focus {
+  background-color: var(--melocoton-oscuro);
+  border-color: var(--tinta);
+  color: #fff;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--tinta);
+}
+.btn-ver-mas {
+  border: 1px solid var(--tinta);
+  background: var(--papel);
+  color: var(--tinta);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.55rem 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+.btn-ver-mas:hover {
+  background: var(--melocoton);
+  border-color: var(--melocoton);
+  color: #0B2A33;
+  transform: translateX(4px);
+}
+
+/* ---------- Cabecera (masthead) ---------- */
+.navbar-site {
+  background: var(--tinta);
+  border-bottom: 5px double var(--melocoton);
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+.navbar-site .navbar-brand {
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  font-size: 1.45rem;
+  color: var(--crema);
+  letter-spacing: 0.02em;
+}
+.navbar-site .navbar-brand i { color: var(--melocoton); }
+.navbar-site .nav-link {
+  color: rgba(243, 233, 210, 0.88);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.15rem;
+}
+.navbar-site .nav-link:hover { color: var(--crema); border-bottom-color: var(--melocoton); }
+.navbar-site .nav-link.active { color: var(--melocoton); border-bottom-color: var(--melocoton); }
+.navbar-site .navbar-toggler { border-color: rgba(243, 233, 210, 0.5); }
+.navbar-site .navbar-toggler-icon { filter: invert(1); }
+
+/* ---------- Hero editorial (sin imagen de fondo) ---------- */
+.hero {
+  position: relative;
+  padding: 4rem 0 3rem;
+  overflow: hidden;
+}
+.hero-marca {
+  position: absolute;
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  font-size: clamp(6rem, 16vw, 13rem);
+  line-height: 1;
+  color: var(--melocoton);
+  opacity: 0.16;
+  right: -2rem;
+  top: -1.5rem;
+  transform: rotate(7deg);
+  pointer-events: none;
+  user-select: none;
+}
+.hero-titulo {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.02;
+  color: var(--tinta);
+}
+.hero-titulo em {
+  color: var(--ladrillo);
+  font-style: italic;
+}
+.hero-lead {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--tinta-clara);
+  max-width: 34rem;
+}
+
+/* Pasepartout (marco editorial para imágenes) */
+.passepartout {
+  position: relative;
+  display: inline-block;
+}
+.passepartout img {
+  position: relative;
+  z-index: 1;
+  border: 10px solid var(--papel);
+  outline: 1px solid var(--tinta);
+  box-shadow: 14px 14px 0 rgba(244, 162, 97, 0.6);
+  filter: saturate(0.92) sepia(0.06);
+}
+.passepartout::before {
+  content: "";
+  position: absolute;
+  inset: -20px 20px 20px -20px;
+  border: 1.5px dashed var(--ladrillo);
+  z-index: 0;
+}
+.rotulo-gira {
+  position: absolute;
+  z-index: 2;
+  background: var(--melocoton);
+  color: #0B2A33;
+  border: 0;
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  transform: rotate(-6deg);
+  box-shadow: 3px 3px 0 var(--tinta);
+}
+.sello-precio {
+  background: var(--ladrillo);
+  color: var(--crema);
+  border: 0;
+  padding: 0.5rem 1.1rem;
+  transform: rotate(4deg);
+  box-shadow: 3px 3px 0 var(--tinta);
+}
+
+/* ---------- Buscador / selector por Mood ---------- */
+.buscador {
+  position: relative;
+  z-index: 5;
+  background: var(--papel);
+  border: 2px solid var(--tinta);
+  box-shadow: 10px 10px 0 rgba(17, 75, 95, 0.9);
+  padding: 1.6rem;
+  margin-top: -4.5rem;
+}
+.buscador .form-label,
+.mood-label {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ladrillo);
+  margin-bottom: 0.4rem;
+}
+.mood-group-title {
+  font-family: var(--ff-titulo);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--tinta);
+}
+.mood-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1.5px solid var(--tinta);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  background: var(--papel);
+  color: var(--tinta);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+.mood-chip:hover {
+  transform: translateY(-2px) rotate(-1deg);
+}
+.mood-chip.active {
+  background: var(--melocoton);
+  border-color: var(--melocoton);
+  color: #0B2A33;
+  box-shadow: 3px 3px 0 var(--ladrillo);
+}
+.form-control, .form-select {
+  background: #FFFDF5;
+  border: 1px solid var(--tinta);
+  border-left: 4px solid var(--melocoton-oscuro);
+  border-radius: 0;
+  color: var(--tinta);
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--melocoton);
+  box-shadow: 0 0 0 0.2rem rgba(244, 162, 97, 0.25);
+}
+.form-select { border-radius: 0; }
+
+/* ---------- Secciones ---------- */
+.section-site { padding: 4.5rem 0; }
+.section-site--papel { background: var(--papel); }
+.section-heading { max-width: 660px; margin: 0 auto 3rem; }
+.section-heading h2 {
+  font-size: clamp(1.8rem, 4vw, 2.9rem);
+  font-weight: 800;
+}
+.text-underline {
+  width: 76px;
+  height: 4px;
+  border-radius: 0;
+  background: var(--melocoton);
+  margin: 0.6rem auto 1rem;
+  border-left: 12px solid var(--ladrillo);
+}
+.section-heading p { color: var(--tinta-clara); font-style: italic; }
+
+/* ---------- Marcas ilustradas / pins ---------- */
+.pin-destino {
+  position: absolute;
+  z-index: 3;
+  top: -0.6rem;
+  left: 1.2rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--ladrillo);
+  border: 2px solid var(--papel);
+}
+.pin-destino::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: var(--crema);
+}
+.num-placa {
+  position: absolute;
+  z-index: 3;
+  top: 0.8rem;
+  right: -0.4rem;
+  background: var(--tinta);
+  color: var(--crema);
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  padding: 0.35rem 0.7rem;
+  transform: rotate(3deg);
+  box-shadow: 2px 2px 0 var(--melocoton);
+}
+
+/* ---------- Cards de destinos ---------- */
+.card-destino,
+.card-paquete {
+  border: 1.5px solid var(--tinta);
+  background: var(--papel);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 var(--tinta);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  position: relative;
+}
+.card-destino:hover,
+.card-paquete:hover {
+  transform: translate(-3px, -6px) rotate(-0.75deg);
+  box-shadow: 12px 14px 0 rgba(17, 75, 95, 0.85);
+}
+.card-destino .card-img-top,
+.card-paquete .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  filter: saturate(0.95) sepia(0.08);
+  border-bottom: 1.5px solid var(--tinta);
+}
+.card-destino .card-body h3,
+.card-paquete .card-body h2 {
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+}
+.precio-desde {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ladrillo);
+  margin: 0;
+}
+.precio-valor {
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  font-size: 1.55rem;
+  color: var(--tinta);
+}
+.ticket-linea { border-top: 1px dashed var(--tinta); margin: 0.7rem 0; }
+
+/* ---------- Resultados / vuelos ---------- */
+.flight-card {
+  background: var(--papel);
+  border: 1px solid var(--tinta);
+  border-left: 6px solid var(--melocoton);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(17, 75, 95, 0.6);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  position: relative;
+}
+.flight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 9px 0 rgba(17, 75, 95, 0.85);
+}
+.hora-vuelo {
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  font-size: 1.45rem;
+  color: var(--tinta);
+}
+.duracion-vuelo {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  color: var(--tinta-clara);
+}
+.icono-vuelo { color: var(--melocoton-oscuro); }
+.badge-escala {
+  background: var(--crema);
+  border: 1px solid var(--ladrillo);
+  color: var(--ladrillo);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+.logo-aerolinea {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-family: var(--ff-titulo);
+  color: #fff;
+  border: 2px solid var(--papel);
+  box-shadow: 0 0 0 2px var(--tinta);
+  flex-shrink: 0;
+}
+.precio-sello {
+  display: inline-block;
+  background: var(--melocoton);
+  border: 2px solid var(--tinta);
+  color: #0B2A33;
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 0.35rem 0.8rem;
+  transform: rotate(-2deg);
+  box-shadow: 3px 3px 0 var(--tinta);
+}
+
+/* ---------- Paneles de filtros ---------- */
+.panel-filtros,
+.panel-info {
+  background: var(--papel);
+  border: 1px solid var(--tinta);
+  border-radius: 0;
+  padding: 1.25rem;
+  box-shadow: 6px 6px 0 rgba(17, 75, 95, 0.55);
+  position: relative;
+}
+.panel-filtros h5,
+.panel-info h5 { font-family: var(--ff-titulo); font-weight: 800; }
+.panel-filtros .titulo-filtro {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ladrillo);
+  border-bottom: 2px solid var(--melocoton);
+  padding-bottom: 0.4rem;
+}
+
+/* ---------- Diario de viaje (timeline) ---------- */
+.diario { position: relative; padding-left: 2.4rem; }
+.diario::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  bottom: 8px;
+  border-left: 3px dashed var(--melocoton);
+}
+.diario-item {
+  position: relative;
+  margin-bottom: 1.9rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.diario-item.visible { opacity: 1; transform: none; }
+.diario-item::before {
+  content: "";
+  position: absolute;
+  left: -1.95rem;
+  top: 0.4rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--crema);
+  border: 3px solid var(--tinta);
+  box-shadow: 0 0 0 3px var(--papel);
+  z-index: 1;
+}
+.diario-item--final::before {
+  background: var(--ladrillo);
+  border-color: var(--ladrillo);
+}
+.diario-fecha {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ladrillo);
+}
+.diario-nodo {
+  background: var(--papel);
+  border: 1px solid var(--tinta);
+  border-left: 5px solid var(--melocoton);
+  padding: 1rem 1.2rem;
+  box-shadow: 4px 4px 0 rgba(17, 75, 95, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.diario-item:hover .diario-nodo {
+  transform: translateY(-3px);
+  box-shadow: 7px 8px 0 rgba(17, 75, 95, 0.7);
+}
+
+/* ---------- Detalle editorial ---------- */
+.detalle-hero {
+  background: var(--tinta);
+  color: var(--crema);
+  position: relative;
+  overflow: hidden;
+}
+.detalle-hero::after {
+  content: "✈";
+  position: absolute;
+  right: -1rem;
+  bottom: -2.5rem;
+  font-size: 12rem;
+  color: var(--melocoton);
+  opacity: 0.12;
+  transform: rotate(15deg);
+}
+.detalle-hero h1 { color: var(--crema); font-weight: 800; }
+.detalle-hero .breadcrumb-item.active { color: var(--melocoton); }
+
+/* ---------- Ticket de resumen / reserva ---------- */
+.resumen-box,
+.ticket {
+  background: var(--papel);
+  border: 2px solid var(--tinta);
+  border-radius: 0;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 8px 8px 0 rgba(17, 75, 95, 0.85);
+}
+.resumen-total {
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  font-size: 1.9rem;
+  color: var(--ladrillo);
+}
+.sello-gran {
+  display: inline-block;
+  border: 3px dashed var(--ladrillo);
+  color: var(--ladrillo);
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  padding: 0.5rem 1.2rem;
+  transform: rotate(-2deg);
+}
+
+/* ---------- Confirmación ---------- */
+.confirmacion-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--melocoton);
+  color: #0B2A33;
+  border: 3px dashed var(--tinta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 3rem;
+  box-shadow: 6px 6px 0 var(--tinta);
+}
+
+/* ---------- Testimonios (cita editorial) ---------- */
+.testimonio {
+  position: relative;
+  padding: 1.6rem 1.2rem 1.2rem;
+  height: 100%;
+}
+.testimonio::before {
+  content: "“";
+  font-family: var(--ff-titulo);
+  font-weight: 800;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--melocoton);
+  position: absolute;
+  top: -0.4rem;
+  left: 0.8rem;
+  opacity: 0.7;
+}
+.testimonio blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  position: relative;
+}
+.estrellas { color: var(--melocoton-oscuro); }
+.avatar-testimonio {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-family: var(--ff-titulo);
+  color: #0B2A33;
+  background: var(--melocoton);
+  border: 2px solid var(--tinta);
+  flex-shrink: 0;
+}
+
+/* ---------- Lista de incluye ---------- */
+.lista-incluye li { gap: 0.6rem; }
+
+/* ---------- Footer ---------- */
+.footer-site {
+  background: var(--tinta);
+  color: rgba(243, 233, 210, 0.85);
+  border-top: 8px double var(--melocoton);
+}
+.footer-site h5 {
+  color: var(--crema);
+  font-weight: 800;
+}
+.footer-site a {
+  color: rgba(243, 233, 210, 0.85);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+}
+.footer-site a:hover { color: var(--melocoton); border-bottom-color: var(--melocoton); }
+.footer-site .redes a {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--melocoton);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.footer-site .redes a:hover {
+  background: var(--melocoton);
+  color: #0B2A33;
+}
+.footer-bottom {
+  border-top: 1px dashed rgba(243, 233, 210, 0.4);
+  color: rgba(243, 233, 210, 0.65);
+}
+
+/* ---------- Accesibilidad / movimiento ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .diario-item { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .boton-accent, .card-destino:hover, .card-paquete:hover, .flight-card {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .desplaza { margin-top: 0 !important; }
+  .buscador { margin-top: -3rem; }
+}
+.desplaza { margin-top: 2.5rem; }

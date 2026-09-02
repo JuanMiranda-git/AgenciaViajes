@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmación de reserva.">
+    <title>Confirmación | Tours Out Here</title>
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/bootstrap-icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-site sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-airplane-fill me-2"></i> Tours Out Here</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navPrincipal" aria-controls="navPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navPrincipal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalogo.html">Paquetes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                </ul>
+                <a href="buscar.html" class="btn boton-accent btn-sm">Buscar vuelos</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <div class="ticket text-center confirmacion-box mx-auto">
+            <span class="sello-gran"><i class="bi bi-check-lg"></i></span>
+            <span class="kicker">Reserva registrada · Nº 05</span>
+            <h1 class="h3 fw-bold mt-2 mb-3">¡Gracias por reservar con nosotros!</h1>
+            <p class="texto-muted mb-1">Tu número de reserva es</p>
+            <p class="numero-reserva" id="numeroReserva">AV-20260901-0000</p>
+            <div class="ticket-linea"></div>
+            <div class="d-flex justify-content-between mt-3">
+                <span class="texto-muted">Tu plan</span>
+                <span class="fw-bold" id="confTitulo">—</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span class="texto-muted">Total</span>
+                <span class="fw-bold" id="confTotal">—</span>
+            </div>
+            <p class="texto-muted small mt-3 mb-4">En breve recibirás un correo con los detalles y las instrucciones de pago.</p>
+            <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
+                <a href="index.html" class="btn boton-accent">Volver al inicio</a>
+                <a href="catalogo.html" class="btn btn-outline-secondary">Ver más paquetes</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-site pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5><i class="bi bi-airplane-fill me-1"></i> Tours Out Here</h5>
+                    <p>Viajes increíbles a precios increíbles. Destinos, paquetes y experiencias para familias, parejas y aventureros.</p>
+                    <div class="d-flex gap-2 mt-3 redes">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="X, antes Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="buscar.html">Vuelos</a></li>
+                        <li><a href="catalogo.html">Paquetes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt me-2"></i>Av. Siempre Viva 123, Bogotá</li>
+                        <li><i class="bi bi-telephone me-2"></i>(+57) 601 234 5678</li>
+                        <li><i class="bi bi-envelope me-2"></i>contacto@toursouthere.co</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Horario</h5>
+                    <ul class="list-unstyled">
+                        <li>Lun a Vie: 8:00 - 18:00</li>
+                        <li>Sábados: 9:00 - 13:00</li>
+                        <li>Domingos: cerrado</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3 mt-4">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+                <p class="mb-0">&copy; 2026 Tours Out Here. Todos los derechos reservados.</p>
+                <p class="mb-0">Maqueta estática · datos de ejemplo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
