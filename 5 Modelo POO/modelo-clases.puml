@@ -1,0 +1,121 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide empty members
+
+class Modulo {
+  - id: Long
+  - nombre: String
+  - descripcion: String
+  - estado: Estado
+  + asignar...
+}
+class Rol {
+  - id: Long
+  - nombre: String
+  - descripcion: String
+  - estado: Estado
+  + asignarModulo()
+  + retirarModulo()
+  + puedeInactivarse()
+}
+class Usuario {
+  - id: Long
+  - nombre: String
+  - email: String
+  - documento: String
+  - contrasenaHash: String
+  - rol: Rol
+  - estado: Estado
+  + cambiarEstado()
+  + estaActivo()
+}
+class Cliente {
+  - id: Long
+  - nombre: String
+  - apellido: String
+  - email: String
+  - intereses: String
+  + agregarReserva()
+  + agregarInteraccion()
+  + getNombreCompleto()
+}
+class PaqueteTuristico {
+  - id: Long
+  - nombre: String
+  - precio: BigDecimal
+  - fechaInicio: LocalDate
+  - fechaFin: LocalDate
+  + agregarServicio()
+  + agregarItinerario()
+  + asignarTransporte()
+  + calcularPrecioServicios()
+}
+class ServicioPaquete
+class Itinerario
+class ActividadItinerario
+class Proveedor {
+  - nombreEmpresa: String
+  - tipoServicio: TipoServicio
+  + agregarServicio()
+  + agregarContrato()
+  + tieneContratoVigente()
+}
+class ServicioProveedor
+class Contrato {
+  - numero: String
+  - fechaInicio: LocalDate
+  - fechaFin: LocalDate
+  - estado: Estado
+  + estaVigente()
+  + actualizarPorOtrosi()
+}
+class Transporte {
+  - tipo: TipoTransporte
+  - capacidad: int
+  - precio: BigDecimal
+  + tieneContratoVigente()
+}
+class Reserva {
+  - estado: EstadoReserva
+  - pasajeros: int
+  - total: BigDecimal
+  + recalcularTotal()
+  + confirmar()
+  + cancelar()
+}
+class Venta {
+  - monto: BigDecimal
+  - metodoPago: MetodoPago
+  - estado: EstadoVenta
+  + registrarPago()
+  + estaPagada()
+}
+class InteraccionCRM
+class Retroalimentacion
+class Configuracion
+
+enum Estado
+enum EstadoReserva
+enum EstadoVenta
+enum TipoServicio
+enum TipoTransporte
+enum MetodoPago
+
+Rol "*" o-- "*" Modulo
+Usuario "*" --> "1" Rol
+Cliente "1" o-- "*" Reserva
+Cliente "1" o-- "*" InteraccionCRM
+Reserva "*" --> "1" PaqueteTuristico
+Reserva "*" --> "0..1" Usuario : gestiona
+Reserva "1" --> "0..1" Venta
+PaqueteTuristico "1" o-- "*" ServicioPaquete
+PaqueteTuristico "1" o-- "*" Itinerario
+Itinerario "1" o-- "*" ActividadItinerario
+PaqueteTuristico "1" o-- "*" Transporte
+Proveedor "1" o-- "*" ServicioProveedor
+Proveedor "1" o-- "*" Contrato
+Transporte "*" --> "1" Proveedor
+Retroalimentacion "*" --> "1" Cliente
+Retroalimentacion "*" --> "1" PaqueteTuristico
+
+@enduml
